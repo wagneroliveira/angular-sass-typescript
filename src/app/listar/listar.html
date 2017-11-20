@@ -1,0 +1,65 @@
+<ol class="breadcrumb">
+    <li><a href="index.html">Produtos</a></li>
+    <li class="active">Nome do Produto</li>
+</ol>
+
+<!-- Título -->
+<div class="row">
+    <div class="col-md-12">
+        <h2>Produtos</h2>
+    </div>
+</div>
+
+<!-- Lista -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">Lista de Produtos</div>
+            <div class="panel-body">
+                <p>Selecione um registro abaixo para editar ou remover.</p>
+                <div class="text-right">
+                    <a href="produtos-cadastrar.html" class="btn btn-primary">
+                                <span class="glyphicon glyphicon-plus"></span> Adicionar
+                            </a>
+                </div>
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="text-center">Código</th>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                        <th>Quantidade</th>
+                        <th class="text-center">Opções</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="produto in produtos">
+                        <td class="text-center">{{::produto.codigo}}</td>
+                        <td>{{::produto.nome}}</td>
+                        <td>
+                            <div class="caption">
+                               <div>{{::produto.descricao}}</div>
+                               <img ng-src="{{::produto.imagem}}" class="thumbnail" ng-if="produto.imagem">
+                               <img ng-src="http://via.placeholder.com/150x150" class="thumbnail" ng-if="!produto.imagem" >
+                            </div>
+                        </td>
+                        <td>R$ {{::produto.valor}}</td>
+                        <td>{{::produto.quantidade}}</td>
+                        <td class="text-center">
+                            <button type="button" class="btn btn-primary" ng-click="controller.editar(produto._id)">
+                                <span class="glyphicon glyphicon-edit"></span>
+                            </button>
+                            <button type="button" class="btn btn-danger" ng-click="controler.remover(produto._id)">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Fim: Lista -->
