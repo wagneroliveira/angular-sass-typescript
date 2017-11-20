@@ -1,5 +1,6 @@
-# angular-sass-typescript
-# projetinho de curso web utilizando (angular, sass, typescript e node)
+# angular-sass-typescript 
+
+- projetinho de curso web utilizando (angular, sass, typescript e node)
 
 
 # procedimento de instalação
